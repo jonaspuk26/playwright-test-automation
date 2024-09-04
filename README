@@ -3,6 +3,9 @@
 This repository contains automated tests using Playwright for web applications. Follow the setup instructions below to get started.
 
 ## This repository is only set up to run tests locally
+## To run magentoTests, use the following command:
+
+
 
 ## Prerequisites
 
