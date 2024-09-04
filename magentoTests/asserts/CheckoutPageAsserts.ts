@@ -20,7 +20,6 @@ export const checkoutPageAsserts = {
         checkoutPage = await checkoutPageInitialize({ page });
     },
 
-    // Function to assert that navigation to hoodies was successful
     async assertFullCheckout(page) {
         await page.waitForURL('https://magento.softwaretestingboard.com/checkout/#shipping');
         await checkoutPage.checkoutEmail.click();
@@ -49,6 +48,4 @@ export const checkoutPageAsserts = {
         await expect(checkoutPage.billingAdressDetails).toContainText(checkoutValues.zip)
         await expect(checkoutPage.billingAdressDetails).toContainText(checkoutValues.phoneNumber)
     },
-
-    // More assertion functions as needed...
 };

@@ -1,6 +1,5 @@
 import { Page, Locator } from '@playwright/test';
 
-// Define a type for the homePage object
 export interface CartPage {
     cartNumber: Locator;
     cartItemName: Locator;
@@ -11,10 +10,8 @@ export interface CartPage {
     cartRemoveItemAcceptButton: Locator;
     viewAndEditCartButton: Locator;
     addToCartButton: Locator;
-    // Add other locators here as needed
 }
 
-// Default export that creates and returns the homePage object with locators
 export default async function ({ page }: { page: Page }): Promise<CartPage> {
     const cartPage: CartPage = {
 

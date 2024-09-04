@@ -12,7 +12,6 @@ export const cartPageAsserts = {
         menPage = await menPageInitialize({ page });
     },
 
-    // Function to assert that navigation to hoodies was successful
     async assertFrankieSweatshirtCartDetailsAndProceed() {
         await cartPage.cartNumber.click();
         await expect(cartPage.cartItemName).toContainText('Frankie Sweatshirt');
@@ -28,6 +27,4 @@ export const cartPageAsserts = {
         await expect(cartPage.cartNumber).toContainText('3', { timeout: 10000 });
         await cartPage.proceedToCheckoutButton.click();
     }
-
-    // More assertion functions as needed...
 };

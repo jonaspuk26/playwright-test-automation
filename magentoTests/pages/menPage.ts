@@ -1,6 +1,5 @@
 import { Page, Locator } from '@playwright/test';
 
-// Define a type for the homePage object
 export interface MenPage {
     navigationMenuMen: Locator;
     navigationMenuMenTops: Locator;
@@ -12,10 +11,8 @@ export interface MenPage {
     frankieSweatshirt: Locator;
     itemQantity: Locator;
     addToCartButton: Locator;
-    // Add other locators here as needed
 }
 
-// Default export that creates and returns the homePage object with locators
 export default async function ({ page }: { page: Page }): Promise<MenPage> {
     const menPage: MenPage = {
         navigationMenuMen: page.locator('[id="ui-id-5"]'),

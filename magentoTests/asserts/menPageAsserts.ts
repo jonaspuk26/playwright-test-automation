@@ -11,7 +11,6 @@ export const menPageAsserts = {
         cartPage = await cartPageInitialize({ page });
     },
 
-    // Function to assert that navigation to hoodies was successful
     async assertMenHoodiesQuantityPerPage() {
         await menPage.navigationMenuMen.hover();
         await menPage.navigationMenuMenTops.hover();
@@ -21,6 +20,7 @@ export const menPageAsserts = {
         await expect(menPage.quantityPerPage).toHaveText(expectedQuantity.toString());
         await expect(actualQuantity).toBe(expectedQuantity);
     },
+
     async assertAddedQuantityUpdatesCartNumber() {
         await menPage.frankieSweatshirt.click();
         await menPage.hoodieSize.click();
@@ -29,6 +29,4 @@ export const menPageAsserts = {
         await menPage.addToCartButton.click();
         await expect(cartPage.cartNumber).toContainText('2');
     },
-
-    // More assertion functions as needed...
 };

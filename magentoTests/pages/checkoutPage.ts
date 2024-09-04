@@ -1,6 +1,5 @@
 import { Page, Locator } from '@playwright/test';
 
-// Define a type for the homePage object
 export interface CheckoutPage {
     checkoutEmail: Locator;
     checkoutFirstName: Locator;
@@ -14,11 +13,8 @@ export interface CheckoutPage {
     checkoutNextButton: Locator;
     paymentPlaceOrderButton: Locator;
     billingAdressDetails: Locator;
-
-    // Add other locators here as needed
 }
 
-// Default export that creates and returns the homePage object with locators
 export default async function ({ page }: { page: Page }): Promise<CheckoutPage> {
     const checkoutPage: CheckoutPage = {
         checkoutEmail: page.locator(`[class="control _with-tooltip"] > [id="customer-email"]`),
@@ -33,7 +29,6 @@ export default async function ({ page }: { page: Page }): Promise<CheckoutPage> 
         checkoutNextButton: page.locator('[class="button action continue primary"]'),
         paymentPlaceOrderButton: page.locator('[title="Place Order"]'),
         billingAdressDetails: page.locator('[class="billing-address-details"]')
-
     };
 
     return checkoutPage;

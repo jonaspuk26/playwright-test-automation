@@ -11,7 +11,6 @@ export const womenPageAsserts = {
         cartPage = await cartPageInitialize({ page });
     },
 
-    // Function to assert that navigation to hoodies was successful
     async assertWomenPantsSortedByPrice(page) {
         await womenPage.navigationMenuWomen.hover();
         await womenPage.navigationMenuWomenBottoms.hover();
@@ -30,18 +29,18 @@ export const womenPageAsserts = {
             await womenPage.pantsSize.nth(0).click();
             await womenPage.pantsColor.nth(0).click();
             await womenPage.addToCartButton.nth(0).click();
-            await expect(cartPage.cartNumber).toContainText(i.toString(), { timeout: 10000 });
+            await expect(cartPage.cartNumber).toContainText(i.toString());
         }
         await cartPage.cartNumber.click();
         await cartPage.cartRemoveItemButton.nth(0).click();
         await cartPage.cartRemoveItemAcceptButton.click();
-        await expect(cartPage.cartNumber).toContainText('2', { timeout: 10000 });
+        await expect(cartPage.cartNumber).toContainText('2');
     },
 
     async assertAddSuggestedItem() {
         await cartPage.viewAndEditCartButton.click();
         await womenPage.addToCartButton.nth(0).click();
-        await expect(cartPage.cartNumber).toContainText('3', { timeout: 10000 });
+        await expect(cartPage.cartNumber).toContainText('3');
     }
-    // More assertion functions as needed...
+
 };
