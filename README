@@ -1,0 +1,40 @@
+# Playwright Tests
+
+This repository contains automated tests using Playwright for web applications. Follow the setup instructions below to get started.
+
+## This repository is only set up to run tests locally
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+1. **Node.js**
+   - Download and install Node.js from [Node.js official website](https://nodejs.org/).
+
+2. **Windows Subsystem for Linux (WSL)**
+   - Install WSL to enable a Linux environment on Windows. Follow the official Microsoft documentation: [Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
+   - After installation, set up your preferred Linux distribution.
+
+3. **Git**
+   - Install Git from [Git official website](https://git-scm.com/).
+
+4. **Playwright**
+   - Install Playwright using npm. Open your terminal and run inside desired path:
+
+     npm install -D playwright
+
+## Running tests
+
+1. **To run tests, use the following command**
+
+    npx playwright test
+
+2. **To run specific tests, use**
+
+    npx playwright test path/to/your/testfile.spec.ts
+
+3. **Set up scripts in package.json file for ease of use**
+
+    "scripts": {
+        "test:local": "npx playwright test magentoTests/ --project=chromium --headed --retries=0 --reporter=line"
+    },
