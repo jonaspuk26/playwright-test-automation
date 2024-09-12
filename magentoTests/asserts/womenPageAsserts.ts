@@ -41,6 +41,10 @@ export const womenPageAsserts = {
         await cartPage.viewAndEditCartButton.click();
         await womenPage.addToCartButton.nth(0).click();
         await expect(cartPage.cartNumber).toContainText('3');
+    },
+
+    async assertWhatever() {
+        await womenPage.addToCartButton.nth(0).click();
     }
 
 };
